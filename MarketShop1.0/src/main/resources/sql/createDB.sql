@@ -41,5 +41,45 @@ VALUES ('ADMIN');
   
 INSERT INTO USER_PROFILE(type)
 VALUES ('DBA');
+
+/* Создание таблиц товаров и категорий*/
+CREATE TABLE IF NOT EXISTS ` product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `manufacturer_id` smallint(6) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `short_description` text NOT NULL,
+  `description` text NOT NULL,
+  `price` decimal(20,2) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `available` smallint(1) NOT NULL DEFAULT '1',
+  `count` int(11) not null,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `product_properties` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `property_name` varchar(255) NOT NULL,
+  `property_value` varchar(255) NOT NULL,
+  `property_price` decimal(20,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `categoryes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `category_name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `category_image` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `product_category` (
+  `product_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
  
 commit;
