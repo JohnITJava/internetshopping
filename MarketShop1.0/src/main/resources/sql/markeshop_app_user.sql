@@ -1,0 +1,2 @@
+UPDATE markeshop.app_user SET sso_id = 'tT', password = '123', first_name = 'Test', last_name = 'Trunk', email = 'test@yandex.ru' WHERE id = 2;
+UPDATE markeshop.app_user SET sso_id = 'JIT', password = '123456', first_name = 'JOhn', last_name = 'Ivanov', email = 'JIT@ya.ru' WHERE id = 3;

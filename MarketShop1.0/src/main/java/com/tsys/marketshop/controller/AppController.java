@@ -39,7 +39,7 @@ public class AppController {
     @Autowired
     MessageSource messageSource;
 
-    //Метод для главной страницы
+    //Метод адресации на index.jsp
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
         return "index";

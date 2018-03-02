@@ -1,0 +1,2 @@
+UPDATE markeshop.categoryes SET parent_id = 0, category_name = 'Saws', description = '', category_image = '' WHERE id = 1;
+UPDATE markeshop.categoryes SET parent_id = 0, category_name = 'Blowers', description = null, category_image = '' WHERE id = 2;
